@@ -1,22 +1,28 @@
 ### go-sshclient
 
-**Usage**:
+**Build:**
 
 ```go
-go run sshclient.go -u <username> -p -A <Ip Address> 
+go build sshclient.go
+```
+
+**Usage**:
+
+```bash
+./sshclient -u <username> -p -A <Ip Address> 
 Enter password: 
 ```
 
 **Saving the auth data in a json file**:
 
-```go
-go run sshclient.go -u <username> -p -A <Ip Address> -j
+```bash
+./sshclient -u <username> -p -A <Ip Address> -j
 ```
 
 **Use the json file to auth:**
 
-```go
-go run sshclient.go -c auth.json
+```bash
+./sshclient -c auth.json
 ```
 
 
