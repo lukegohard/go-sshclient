@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/base64"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -16,10 +15,9 @@ import (
 )
 
 type ServerAuth struct {
-	Username    string `json:"username"`
-	EncodedPass string `json:"password"`
-	IpAddress   string `json:"ip_addr"`
-	Port        string `json:"port"`
+	Username  string `json:"username"`
+	IpAddress string `json:"ip_addr"`
+	Port      string `json:"port"`
 }
 
 var auth ServerAuth
@@ -109,7 +107,6 @@ func init() {
 
 func saveToJson(filename string) {
 
-	auth.EncodedPass = base64.StdEncoding.EncodeToString([]byte(Password))
 	file, err := json.MarshalIndent(auth, "", "  ")
 	CheckErr(err)
 
@@ -125,10 +122,6 @@ func jsonAuth(authFilename string) {
 	err = json.Unmarshal(data, &auth)
 	CheckErr(err)
 
-	raw, err := base64.StdEncoding.DecodeString(auth.EncodedPass)
-	CheckErr(err)
-
-	Password = string(raw)
 }
 
 func FileExists(filename string) bool {

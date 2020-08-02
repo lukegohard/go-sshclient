@@ -22,7 +22,7 @@ Enter password:
 **Use the json file to auth:**
 
 ```bash
-./sshclient -c auth.json
+./sshclient -c auth.json 
 ```
 
 
@@ -42,10 +42,8 @@ Enter password:
 ```
 
 ```bash
-./sshclient -c auth.json
+./sshclient -c auth.json -p
 ```
-
-
 
 
 
@@ -59,6 +57,6 @@ Enter password:
 
 **-P** ---> define server port (default: 22)
 
-**-j** ---> save the auth config in a json file with encoded password
+**-j** ---> save the auth config in a json file (password not saved in file)
 
 **-c** --->  load the json config file for auth 
