@@ -27,6 +27,28 @@ Enter password:
 
 
 
+**Example:**
+
+```bash
+./sshclient -u ex0dia -p -A 192.168.1.100 
+```
+
+```bash
+./sshclient -u ex0dia -p -A 192.168.1.100 -P 2222
+```
+
+```bash
+./sshclient -u ex0dia -p -A 192.168.1.100 -j
+```
+
+```bash
+./sshclient -c auth.json
+```
+
+
+
+
+
 **Flag**:
 
 **-u** ---> define username
