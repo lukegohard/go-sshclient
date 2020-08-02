@@ -73,9 +73,9 @@ func main() {
 func init() {
 
 	flag.StringVar(&auth.Username, "u", "", "username")
-	flag.StringVar(&auth.Password, "pw", "", "password")
-	flag.StringVar(&auth.IpAddress, "a", "", "server ip address")
-	flag.StringVar(&auth.Port, "p", "22", "server port")
+	flag.StringVar(&auth.Password, "p", "", "password")
+	flag.StringVar(&auth.IpAddress, "A", "", "server ip address")
+	flag.StringVar(&auth.Port, "P", "22", "server port")
 
 }
 
