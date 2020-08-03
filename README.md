@@ -60,3 +60,11 @@ Enter password:
 **-j** ---> save the auth config in a json file (password not saved in file)
 
 **-c** --->  load the json config file for auth 
+
+
+
+
+
+**Note:**
+
+Key Authentication wiil be implemented soon...
