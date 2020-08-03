@@ -96,10 +96,15 @@ func main() {
 
 func init() {
 
+	//username & password
 	flag.StringVar(&auth.Username, "u", "", "username")
+	flag.BoolVar(&PasswordBool, "p", false, "use this flag for insert password")
+
+	//server ip address & port
 	flag.StringVar(&auth.IpAddress, "A", "", "server ip address")
 	flag.StringVar(&auth.Port, "P", "22", "server port")
-	flag.BoolVar(&PasswordBool, "p", false, "use this flag for insert password")
+
+	//json auth file
 	flag.BoolVar(&jsonBool, "j", false, "save the auth config in a file")
 	flag.StringVar(&jsonFilename, "c", "", "load the auth file")
 
