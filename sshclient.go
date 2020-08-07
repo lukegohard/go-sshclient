@@ -33,11 +33,14 @@ func main() {
 	//flag for server auth data
 	flag.Parse()
 
+	//if FileExists(jsonFilename) == true, use json auth
 	if FileExists(jsonFilename) {
 		jsonAuth(jsonFilename)
+
 	}
 
 	if auth.Username == "" && auth.IpAddress == "" {
+		fmt.Println("[-]Please insert username and IP Address.")
 		os.Exit(1)
 	}
 
