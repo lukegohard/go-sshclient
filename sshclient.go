@@ -14,12 +14,14 @@ import (
 	"golang.org/x/crypto/ssh/terminal"
 )
 
+//struct for save server auth data in a json file
 type ServerAuth struct {
 	Username  string `json:"username"`
 	IpAddress string `json:"ip_addr"`
 	Port      string `json:"port"`
 }
 
+//define variable
 var auth ServerAuth
 var jsonBool bool
 var jsonFilename string
@@ -33,6 +35,10 @@ func main() {
 
 	if FileExists(jsonFilename) {
 		jsonAuth(jsonFilename)
+	}
+
+	if auth.Username == "" && auth.IpAddress == "" {
+		os.Exit(1)
 	}
 
 	//check if username and IpAddress are empty
@@ -55,6 +61,7 @@ func main() {
 
 	}
 
+	//if '-j' used, save auth to json
 	if jsonBool {
 		saveToJson("auth.json")
 	}
